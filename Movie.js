@@ -168,66 +168,66 @@ clearBtn.classList.add("highlight");
 }
 
 
-// getMovies(API_URL);
+getMovies(API_URL);
 
-// function getMovies(url) {
-//     lasturl = url;
-// fetch(url).then(res=>res.json() ).then(data=>{
-//     console.log(data.results);
-//     if(data.results.length !=0){
-//         showMovies(data.results);
-//         currentPage = data.page;
-//         nextPage = currentPage+1;
-//         prevPage = currentPage-1;
-//         totalPages = data.total_pages;
+function getMovies(url) {
+    lasturl = url;
+fetch(url).then(res=>res.json() ).then(data=>{
+    console.log(data.results);
+    if(data.results.length !=0){
+        showMovies(data.results);
+        currentPage = data.page;
+        nextPage = currentPage+1;
+        prevPage = currentPage-1;
+        totalPages = data.total_pages;
 
-// current.innerText= currentPage;
+current.innerText= currentPage;
 
-// if(currentPage <= 1){
-//     prev.classList.add("disabled");
-//    next.classList.remove("disabled");
-// }else if(currentPage>=totalPages){
-//     prev.classList.remove("disabled");
-//     next.classList.add("disabled");
-// }else{
-//     prev.classList.remove("disabled");
-//     next.classList.remove("disabled");
-// }
-// tagsEl.scrollIntoView({behaviour : "smooth"});
+if(currentPage <= 1){
+    prev.classList.add("disabled");
+   next.classList.remove("disabled");
+}else if(currentPage>=totalPages){
+    prev.classList.remove("disabled");
+    next.classList.add("disabled");
+}else{
+    prev.classList.remove("disabled");
+    next.classList.remove("disabled");
+}
+tagsEl.scrollIntoView({behaviour : "smooth"});
 
-//     }else{
-// main.inner1html = `<h1> No results found</h1>`
-//     }  
-// })
+    }else{
+main.inner1html = `<h1> No results found</h1>`
+    }  
+})
 
-// }
-// function showMovies(data){
-// main.innerHTML = " " ;
+}
+function showMovies(data){
+main.innerHTML = " " ;
 
-// data.forEach(movie => {
-// const {title,poster_path,vote_average,overview} = movie;
+data.forEach(movie => {
+const {title,poster_path,vote_average,overview} = movie;
 
-//  const movieEl = document.createElement('div');
-//  movieEl.classList.add("movie");
-//  movieEl.innerHTML=`
+ const movieEl = document.createElement('div');
+ movieEl.classList.add("movie");
+ movieEl.innerHTML=`
   
-// <img src = "${poster_path?IMG_URL+poster_path:"https://via.placeholder.com/1080x1580"}" alt="${title}">
+<img src = "${poster_path?IMG_URL+poster_path:"https://via.placeholder.com/1080x1580"}" alt="${title}">
 
-// <div class = "movie-info">
-//     <h3>${title}</h3>
-//     <span class="${getColor(vote_average)}">${vote_average}</span>
-//     </div>
+<div class = "movie-info">
+    <h3>${title}</h3>
+    <span class="${getColor(vote_average)}">${vote_average}</span>
+    </div>
 
-//     <div class="overview">
-//     <h3>Overview</h3>
-//     ${overview}
-//     </div>
-//     `
-// main.appendChild(movieEl);
+    <div class="overview">
+    <h3>Overview</h3>
+    ${overview}
+    </div>
+    `
+main.appendChild(movieEl);
 
-// })
+})
 
-// }
+}
 
 // function getColor(vote){              //to get color acc to Imdb rating
 //  if(vote>=7){
