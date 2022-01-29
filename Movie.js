@@ -133,39 +133,39 @@ highlightSelection();
 })
 } 
 
-// function highlightSelection(){                                       //to remove highlight of first after selection of another
-//     const tags = document.querySelectorAll(".tag");
-//     tags.forEach(tag =>{
-//         tag.classList.remove("highlight")
-//     })
-//     clearBtn()
-//     if(selectedGenre.length !=0){
-//         selectedGenre.forEach(id => {
-//             const highlightedTag = document.getElementById(id);
-//             highlightedTag.classList.add("highlight");
-//         })
-//     }  
-// }
-// function clearBtn(){
-//     let clearBtn = document.getElementById("clear");
-//     if(clearBtn){
-// clearBtn.classList.add("highlight");
-//     }else{
+function highlightSelection(){                                       //to remove highlight of first after selection of another
+    const tags = document.querySelectorAll(".tag");
+    tags.forEach(tag =>{
+        tag.classList.remove("highlight")
+    })
+    clearBtn()
+    if(selectedGenre.length !=0){
+        selectedGenre.forEach(id => {
+            const highlightedTag = document.getElementById(id);
+            highlightedTag.classList.add("highlight");
+        })
+    }  
+}
+function clearBtn(){
+    let clearBtn = document.getElementById("clear");
+    if(clearBtn){
+clearBtn.classList.add("highlight");
+    }else{
 
     
-//     let clear = document.createElement("div");
-//     clear.classList.add("tag","highlight");
-//     clear.id = "clear" ;
-//     clear.innerText = "Clear x" ;
-//     clear.addEventListener("click",() =>{
-//         selectedGenre = [];
-//         setGenre();
-//         getMovies(API_URL);
-//     })
-//     tagsEl.append(clear);
-// }
+    let clear = document.createElement("div");
+    clear.classList.add("tag","highlight");
+    clear.id = "clear" ;
+    clear.innerText = "Clear x" ;
+    clear.addEventListener("click",() =>{
+        selectedGenre = [];
+        setGenre();
+        getMovies(API_URL);
+    })
+    tagsEl.append(clear);
+}
 
-// }
+}
 
 
 // getMovies(API_URL);
