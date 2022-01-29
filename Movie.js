@@ -229,55 +229,55 @@ main.appendChild(movieEl);
 
 }
 
-// function getColor(vote){              //to get color acc to Imdb rating
-//  if(vote>=7){
-//      return "green"
-//  }else if(vote>=3){
-//      return "orange"
-//  }else{
-//      return "red"
-//  }
-// }
+function getColor(vote){              //to get color acc to Imdb rating
+ if(vote>=7){
+     return "green"
+ }else if(vote>=3){
+     return "orange"
+ }else{
+     return "red"
+ }
+}
 
 //to activate the form submission ..after form submission this function is executed
 
 
-// form.addEventListener("submit", (e)=> {
-// e.preventDefault();
-// const searchTerm = search.value;
-// selectedGenre=[];
-// highlightSelection();
-// if(searchTerm){
-// getMovies(searchURL+"&query="+searchTerm)
+form.addEventListener("submit", (e)=> {
+e.preventDefault();
+const searchTerm = search.value;
+selectedGenre=[];
+highlightSelection();
+if(searchTerm){
+getMovies(searchURL+"&query="+searchTerm)
 
-// }else{
-//     getMovies(API_URL)
-// }
-// })
-// prev.addEventListener("click", ()=>{
-//     if(prevPage > 0){
-//         pageCall(prevPage);
-//     }
-// })
+}else{
+    getMovies(API_URL)
+}
+})
+prev.addEventListener("click", ()=>{
+    if(prevPage > 0){
+        pageCall(prevPage);
+    }
+})
 
-// next.addEventListener("click", ()=>{
-//     if(nextPage <= totalPages){
-//         pageCall(nextPage);
-//     }
-// })
-// function pageCall(page){
-//     let urlSplit = lastUrl.split("?");
-//     let queryParams = urlSplit[1].split("&");
-//     let key = queryParams[queryParams.length-1].split("=");
-//     if(key[0] !="page"){
-//         let url = lastUrl+ "&page=" + page
-//         getMovies(url);
-//     }else{
-//         key[1] = page.toString();
-//         let a = key.join("=");
-//         queryParams[queryParams.join.length-1]=a
-//         let b=queryParams.join("&");
-//         let url = url.split[0]+"?" + b;
-//         getMovies(url);
-//     }
-// }
+next.addEventListener("click", ()=>{
+    if(nextPage <= totalPages){
+        pageCall(nextPage);
+    }
+})
+function pageCall(page){
+    let urlSplit = lastUrl.split("?");
+    let queryParams = urlSplit[1].split("&");
+    let key = queryParams[queryParams.length-1].split("=");
+    if(key[0] !="page"){
+        let url = lastUrl+ "&page=" + page
+        getMovies(url);
+    }else{
+        key[1] = page.toString();
+        let a = key.join("=");
+        queryParams[queryParams.join.length-1]=a
+        let b=queryParams.join("&");
+        let url = url.split[0]+"?" + b;
+        getMovies(url);
+    }
+}
